@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./styles/DigitsInput.css";
+// import "./styles/DigitsInput.css";
 import Grids from "../Grids/Grids";
 
 const DigitsInput = () => {
@@ -64,6 +64,40 @@ const DigitsInput = () => {
       <div className="grids-container">
         <Grids numbers={state}></Grids>
       </div>
+      <style jsx>{`
+        .digits-input {
+          display: grid;
+          // grid-gap: 30vmin;
+          grid-template-areas:
+            "header calculations calculations "
+            " .      calculations calculations";
+        }
+
+        .number-of-digits {
+          width: 15vw;
+          grid-area: header;
+        }
+
+        .grids-container {
+          grid-area: calculations;
+        }
+
+        .nod {
+          text-align: center;
+        }
+
+        @media only screen and (max-width: 600px) {
+          .digits-input {
+            display: block;
+          }
+          .number-of-digits {
+            width: 100%;
+          }
+          .grids-container {
+            width: 100%;
+          }
+        }
+      `}</style>
     </div>
   );
 };

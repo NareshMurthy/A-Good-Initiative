@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./styles/Grids.css";
-
 import Keypad from "../Keypad/Keypad";
 import Swal from "sweetalert2";
-import haha from "../../images/haha.svg";
-import sad from "../../images/sad.svg";
 
 import RenderAnswerInput from "../Common/RenderAnswerInput/RenderAnswerInput";
 
@@ -51,12 +47,12 @@ const Grids = props => {
       if (expected === parseInt(answer)) {
         title = "Yay!";
         text = "Great, you are correct!";
-        imageUrl = haha;
+        imageUrl = "/images/haha.svg";
         imageAlt = "Success";
       } else {
         title = "Oh Oh!";
         text = "Try again";
-        imageUrl = sad;
+        imageUrl = "/images/sad.svg";
         imageAlt = "Wrong";
       }
 
@@ -168,6 +164,48 @@ const Grids = props => {
           </div>
         </div>
         <Keypad handleClick={handleClick}></Keypad>
+        <style jsx>{`
+          .grids {
+            margin-left: 30vmin;
+            background-color: rgb(247, 252, 253);
+            padding-left: 40px;
+            padding-top: 5px;
+          }
+
+          .cell {
+            background: lightsalmon;
+            border: 1px solid yellow;
+            text-align: right;
+            height: 7vmin;
+            padding: 8px 15px;
+          }
+          .cell-input {
+            padding: 0;
+          }
+          .carry {
+            width: 12vw;
+          }
+          .matrix {
+            width: 50vw;
+          }
+          .btn-info {
+            width: 100%;
+            height: 7vmin;
+          }
+          @media only screen and (max-width: 900px) {
+            .grids {
+              margin-left: 10vmin;
+            }
+          }
+          @media only screen and (max-width: 600px) {
+            .matrix {
+              width: 100%;
+            }
+            .grids {
+              margin: 0;
+            }
+          }
+        `}</style>
       </div>
     );
   } else {
