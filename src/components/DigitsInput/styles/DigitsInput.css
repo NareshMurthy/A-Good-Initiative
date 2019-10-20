@@ -1,0 +1,37 @@
+.digits-input {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "header calculations calculations " " .      calculations calculations";
+}
+
+.number-of-digits {
+  width: 15vw;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+}
+
+.grids-container {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: calculations;
+}
+
+.nod {
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .digits-input {
+    display: block;
+  }
+  .number-of-digits {
+    width: 100%;
+  }
+  .grids-container {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=DigitsInput.css.map */
